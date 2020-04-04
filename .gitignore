@@ -88,3 +88,9 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# node modules
+_GraphQL/node_modules
+
+# GitHub GraphQL API schema.json
+_GraphQL/schema.json
