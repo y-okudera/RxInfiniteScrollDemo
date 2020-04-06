@@ -1,0 +1,28 @@
+query GitHubRepos($query: String!, $type: SearchType!, $first: Int!, $after: String) {
+    search(query: $query, type: $type, first: $first, after: $after) {
+        repositoryCount
+        nodes {
+            ... on Repository {
+                name
+                nameWithOwner
+                homepageUrl
+                description
+                owner {
+                    avatarUrl
+                }
+                stargazers {
+                    totalCount
+                }
+                primaryLanguage {
+                    name
+                }
+            }
+        }
+        pageInfo {
+            startCursor
+            endCursor
+            hasPreviousPage
+            hasNextPage
+        }
+    }
+}
