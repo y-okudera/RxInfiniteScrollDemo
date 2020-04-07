@@ -92,5 +92,6 @@ iOSInjectionProject/
 # node modules
 _GraphQL/node_modules
 
-# GitHub GraphQL API schema.json
+# GitHub GraphQL API schema.json and generated file.
 _GraphQL/schema.json
+RxInfiniteScrollDemo/RxInfiniteScrollDemo/Models/Generated/GitHubGraphQLAPI.swift

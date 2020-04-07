@@ -11,4 +11,4 @@ $ node_modules/.bin/apollo schema:download --endpoint="https://api.github.com/gr
 （※ \<GitHub Token\>の部分は、GitHubアカウントのトークンを入れる）
 
 ### Modelの生成
-$ node_modules/.bin/apollo codegen:generate --queries=query.graphql --localSchemaFile=schema.json --target=swift ../RxInfiniteScrollDemo/RxInfiniteScrollDemo/Models/GitHubGraphQLAPI.swift
+$ node_modules/.bin/apollo codegen:generate --queries=query.graphql --localSchemaFile=schema.json --target=swift ../RxInfiniteScrollDemo/RxInfiniteScrollDemo/Models/Generated/GitHubGraphQLAPI.swift
