@@ -16,6 +16,6 @@ struct GitHubRequest: GraphQLRequest {
     var query: GitHubReposQuery
     var url: URL = "https://api.github.com/graphql".toURL()
 
-    // MARK: - Set "Bearer <Set GitHub personal access token>"
+    #warning("Set \"Bearer <Set GitHub personal access token>\"")
     var httpAdditionalHeaders: [AnyHashable: Any]? = ["Authorization": ""]
 }

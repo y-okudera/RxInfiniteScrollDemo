@@ -22,8 +22,7 @@ struct GraphQLClient {
         configuration.httpAdditionalHeaders = graphQLRequest.httpAdditionalHeaders
         let session = URLSession(configuration: configuration)
         let httpNetworkTransport = HTTPNetworkTransport(url: graphQLRequest.url, session: session)
-
-
+        
         self.apolloClient = ApolloClient(networkTransport: httpNetworkTransport)
         return self.apolloClient!
             .rx
