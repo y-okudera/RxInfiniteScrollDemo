@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FC1C2CF62438D80C00D100AA /* String+ToURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1C2CF52438D80C00D100AA /* String+ToURL.swift */; };
-		FC1C2CFA2439EEE800D100AA /* GitHubGraphQLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1C2CF92439EEE800D100AA /* GitHubGraphQLAPI.swift */; };
 		FC1C2CFD2439FA3300D100AA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FC1C2CFC2439FA3300D100AA /* RxRelay */; };
 		FC1C2CFF2439FA3300D100AA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FC1C2CFE2439FA3300D100AA /* RxSwift */; };
 		FC1C2D012439FA3300D100AA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FC1C2D002439FA3300D100AA /* RxCocoa */; };
@@ -39,6 +38,7 @@
 		FCEEA9B5243B7BAA00EB07C4 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEA9B3243B7BAA00EB07C4 /* LoadingCell.swift */; };
 		FCEEA9B6243B7BAA00EB07C4 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEEA9B4243B7BAA00EB07C4 /* LoadingCell.xib */; };
 		FCEEA9B9243B8F1100EB07C4 /* RxNuke in Frameworks */ = {isa = PBXBuildFile; productRef = FCEEA9B8243B8F1100EB07C4 /* RxNuke */; };
+		FCEEA9BC243C044700EB07C4 /* GitHubGraphQLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEA9BB243C044700EB07C4 /* GitHubGraphQLAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,6 @@
 
 /* Begin PBXFileReference section */
 		FC1C2CF52438D80C00D100AA /* String+ToURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToURL.swift"; sourceTree = "<group>"; };
-		FC1C2CF92439EEE800D100AA /* GitHubGraphQLAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubGraphQLAPI.swift; sourceTree = "<group>"; };
 		FC1C2D08243A0B4A00D100AA /* GraphQLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLRequest.swift; sourceTree = "<group>"; };
 		FC1C2D0A243A0FD400D100AA /* GraphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLClient.swift; sourceTree = "<group>"; };
 		FC42B713243B2145004D21C7 /* GitHubSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSearchViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		FCEEA9B1243B786B00EB07C4 /* UIScrollView+NearBottomEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+NearBottomEdge.swift"; sourceTree = "<group>"; };
 		FCEEA9B3243B7BAA00EB07C4 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		FCEEA9B4243B7BAA00EB07C4 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		FCEEA9BB243C044700EB07C4 /* GitHubGraphQLAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubGraphQLAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 		FC1C2CF12438CD4E00D100AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FC1C2CF92439EEE800D100AA /* GitHubGraphQLAPI.swift */,
+				FCEEA9BA243C044700EB07C4 /* Generated */,
 				FC42B72C243B52AC004D21C7 /* GitHubRequest.swift */,
 			);
 			path = Models;
@@ -289,6 +289,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		FCEEA9BA243C044700EB07C4 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				FCEEA9BB243C044700EB07C4 /* GitHubGraphQLAPI.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -445,7 +453,6 @@
 				FC42B724243B254B004D21C7 /* UIViewController+Instantiate.swift in Sources */,
 				FC42B714243B2145004D21C7 /* GitHubSearchViewController.swift in Sources */,
 				FCEEA9B2243B786B00EB07C4 /* UIScrollView+NearBottomEdge.swift in Sources */,
-				FC1C2CFA2439EEE800D100AA /* GitHubGraphQLAPI.swift in Sources */,
 				FC6815E62438888000C9096B /* AppDelegate.swift in Sources */,
 				FC42B71E243B24E3004D21C7 /* NibRegistrable.swift in Sources */,
 				FC1C2CF62438D80C00D100AA /* String+ToURL.swift in Sources */,
@@ -456,6 +463,7 @@
 				FC42B72D243B52AC004D21C7 /* GitHubRequest.swift in Sources */,
 				FC6815E82438888000C9096B /* SceneDelegate.swift in Sources */,
 				FC42B720243B2502004D21C7 /* UITableViewCell+Identifier.swift in Sources */,
+				FCEEA9BC243C044700EB07C4 /* GitHubGraphQLAPI.swift in Sources */,
 				FC42B728243B276F004D21C7 /* GitHubSearchViewModel.swift in Sources */,
 				FC1C2D09243A0B4A00D100AA /* GraphQLRequest.swift in Sources */,
 			);
