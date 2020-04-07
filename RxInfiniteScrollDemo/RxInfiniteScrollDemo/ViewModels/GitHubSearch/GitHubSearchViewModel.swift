@@ -26,6 +26,8 @@ final class GitHubSearchViewModel: UnioStream<GitHubSearchViewModel>, GitHubSear
 
 extension GitHubSearchViewModel {
 
+    typealias Extra = NoExtra
+    
     struct Input: InputType {
         let initialFetchTrigger = PublishRelay<String>()
         let fetchTrigger = PublishRelay<Void>()
@@ -51,8 +53,6 @@ extension GitHubSearchViewModel {
             self.isLoading.accept(false)
         }
     }
-
-    typealias Extra = NoExtra
 }
 
 extension GitHubSearchViewModel {
@@ -117,12 +117,5 @@ extension GitHubSearchViewModel {
             fetchError: fetchData.errors.map { $0 as Error },
             isLoading: state.isLoading
         )
-    }
-
-    private static func initState(state: inout State) {
-        state.searchText.accept("")
-        state.nodes.accept([])
-        state.pageInfo.accept(.init(hasPreviousPage: false, hasNextPage: true))
-        state.isLoading.accept(false)
     }
 }

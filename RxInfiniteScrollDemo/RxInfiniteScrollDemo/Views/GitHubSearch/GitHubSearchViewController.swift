@@ -11,6 +11,15 @@ import RxSwift
 import RxViewController
 import UIKit
 
+private enum GitHubSearchTableViewSection: Int, CaseIterable {
+    case githubItems
+    case loading
+
+    static func numberOfSectionsWhenNotLoading() -> Int {
+        return GitHubSearchTableViewSection.allCases.count - 1
+    }
+}
+
 final class GitHubSearchViewController: UIViewController {
 
     // MARK: - IBOutlet
@@ -160,37 +169,41 @@ extension GitHubSearchViewController: UISearchBarDelegate {
 // MARK: - UITableViewDataSource
 extension GitHubSearchViewController: UITableViewDataSource {
 
-    // TODO: - refactoring
-
     func numberOfSections(in tableView: UITableView) -> Int {
         let isLoading = self.viewModel.output.isLoading.value
-        return isLoading ? 2 : 1
+        return isLoading ? GitHubSearchTableViewSection.allCases.count : GitHubSearchTableViewSection.numberOfSectionsWhenNotLoading()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
+
+        guard let gitHubSearchSection = GitHubSearchTableViewSection(rawValue: section) else {
+            assertionFailure("GitHubSearchTableViewSection error.")
+            return 0
+        }
+
+        switch gitHubSearchSection {
+        case .githubItems:
             let nodesCount = self.viewModel.output.nodes.value.count
             return nodesCount
 
-        case 1:
+        case .loading:
             return 1
-
-        default:
-            return 0
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
+
+        guard let gitHubSearchSection = GitHubSearchTableViewSection(rawValue: indexPath.section) else {
+            assertionFailure("GitHubSearchTableViewSection error.")
+            return UITableViewCell()
+        }
+
+        switch gitHubSearchSection {
+        case .githubItems:
             return self.gitHubRepositoryCell(tableView: tableView, cellForRowAt: indexPath)
 
-        case 1:
+        case .loading:
             return self.loadingCell(tableView: tableView, cellForRowAt: indexPath)
-
-        default:
-            return UITableViewCell()
         }
     }
 
