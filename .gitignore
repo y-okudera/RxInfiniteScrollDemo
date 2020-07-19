@@ -94,4 +94,5 @@ _GraphQL/node_modules
 
 # GitHub GraphQL API schema.json and generated file.
 _GraphQL/schema.json
+_GraphQL/package-lock.json
 RxInfiniteScrollDemo/RxInfiniteScrollDemo/Models/Generated/GitHubGraphQLAPI.swift
